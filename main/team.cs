@@ -32,4 +32,10 @@ class Team {
       Console.WriteLine(start[i]);
     }
   }
+  public string Name() {
+    return name;
+  }
+  public string[] Start() {
+    return start;
+  }
 }
