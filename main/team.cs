@@ -3,14 +3,17 @@
 class Team {
   string name;
   string city;
-  int players;
+  string coach;
+  int players = 11;
+  string[] start;
   int[] rating;
 
-  public Team(string n, string c, int p, int[] r) {
+  public Team(string n, string c, string co, string[] s, int[] r) {
     name = n;
     city = c;
-    players = p;
     rating = r;
+    coach = co;
+    start = s;
   } 
   public int AverageRating() {
     int sum = 0;
@@ -18,5 +21,15 @@ class Team {
       sum += rating[i];
     }
     return sum / players;
+  }
+  public void Information() {
+    Console.WriteLine("Name: " + name);
+    Console.WriteLine("City: " + city);
+    Console.WriteLine("Coach: " + coach);
+    Console.WriteLine("----------");
+    Console.WriteLine("Start:");
+    for (int i = 0; i < start.Length; i++) {
+      Console.WriteLine(start[i]);
+    }
   }
 }
