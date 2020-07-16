@@ -1,15 +1,17 @@
+using System.Collections.Generic;
+
 class MU {
-  public static string MUname = "Manchester United";
-  public static string MUcity = "Manchester";
-  public static string MUcoach = "Ole Gunnar Solskjaer";
-  public static string[] MUstart = { 
+  public string name = "Manchester United";
+  public string city = "Manchester";
+  public string coach = "Ole Gunnar Solskjaer";
+  public string[] start = { 
     "De Gea", 
     "Shaw", "Lindelof", "Maguaire", "Wan-Bissaka", 
     "Matic", "Pogba",
     "Fernandes",
     "Martial", "Greenwood", "Rashford"
   };
-  public static int[] MUrating = { 90, // De Gea
+  public int[] rating = { 90, // De Gea
     80, // Lindelof
     86, // Shaw
     87, // Wan-Bissaka
@@ -24,16 +26,16 @@ class MU {
 }
 
 class LIV {
-  public static string LIVname = "Liverpool";
-  public static string LIVcity = "Liverpool";
-  public static string LIVcoach = "Jurgen Klopp";
-  public static string[] LIVstart = {
+  public string name = "Liverpool";
+  public string city = "Liverpool";
+  public string coach = "Jurgen Klopp";
+  public string[] start = {
     "Alisson",
     "Robertson", "Van Dijk", "Matip", "Alexandr-Arnold",
     "Wijnaldum", "Milner", "Fabinho",
     "Mane", "Salah", "Firmino"
   };
-  public static int[] LIVrating = {
+  public int[] rating = {
     90, // Alisson
     89, // Robertson
     94, // Van Dijk
