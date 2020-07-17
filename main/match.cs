@@ -3,7 +3,7 @@ using System;
 class Match {
   public static void Main() {
     MU teamfirst = new MU();
-    LIV teamsecond = new LIV();
+    BAY teamsecond = new BAY();
 
     Team first = new Team(teamfirst.name, teamfirst.city, teamfirst.coach, teamfirst.start, teamfirst.rating);
     Team second = new Team(teamsecond.name, teamsecond.city, teamsecond.coach, teamsecond.start, teamsecond.rating);
@@ -27,16 +27,37 @@ class Match {
     if (firstscore != 0) Console.WriteLine(first.Name() + ":");
     for (int i = 0; i < firstscore; i++) {
       minfirst = rnd.Next(minfirst, 95);
-      Console.WriteLine(first.Start()[rnd.Next(1, 10)] + " " + minfirst + "'");
+      /* if (rnd.Next(0, 8) == 7) {
+        Console.WriteLine(first.Start()[rnd.Next(1, 10)] + "(pen) " + minfirst + "'");
+      } */
+      if (rnd.Next(0, 4) != 3 && rnd.Next(0, 1) == 1) {
+        Console.WriteLine(first.Start()[rnd.Next(1, 10)] + " " + minfirst + "'");
+      } else {
+        int scorer = rnd.Next(1, 10);
+        int assistant = rnd.Next(1, 10);
+        if (assistant != scorer) {
+          Console.WriteLine(first.Start()[scorer] + "(" + first.Start()[assistant] + ") " + minfirst + "'");
+        } else {
+          Console.WriteLine(first.Start()[rnd.Next(1, 10)] + "(pen) " + minfirst + "'");
+        }
+      }
     }
 
     int minsecond = 1;
     if (secondscore != 0) Console.WriteLine(second.Name() + ":");
     for (int i = 0; i < secondscore; i++) {
       minsecond = rnd.Next(minsecond, 95);
-      if (rnd.Next(0, 8) == 7) {
-        Console.WriteLine(second.Start()[rnd.Next(1, 10)] + "(pen)" + " " + minsecond + "'");
-      } else Console.WriteLine(second.Start()[rnd.Next(1, 10)] + " " + minsecond + "'");
+      if (rnd.Next(0, 4) != 3 && rnd.Next(0, 1) == 1) {
+        Console.WriteLine(second.Start()[rnd.Next(1, 10)] + " " + minsecond + "'");
+      } else {
+        int scorer = rnd.Next(1, 10);
+        int assistant = rnd.Next(1, 10);
+        if (assistant != scorer) {
+          Console.WriteLine(second.Start()[scorer] + "(" + second.Start()[assistant] + ") " + minsecond + "'");
+        } else {
+          Console.WriteLine(second.Start()[rnd.Next(1, 10)] + "(pen) " + minsecond + "'");
+        }
+      } 
     }
 
     if (firstscore == 0 && secondscore == 0) {
