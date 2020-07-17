@@ -2,8 +2,8 @@ using System;
 
 class Match {
   public static void Main() {
-    LIV teamfirst = new LIV();
-    PSG teamsecond = new PSG();
+    MU teamfirst = new MU();
+    LIV teamsecond = new LIV();
 
     Team first = new Team(teamfirst.name, teamfirst.city, teamfirst.coach, teamfirst.start, teamfirst.rating);
     Team second = new Team(teamsecond.name, teamsecond.city, teamsecond.coach, teamsecond.start, teamsecond.rating);
@@ -27,7 +27,7 @@ class Match {
     if (firstscore != 0) Console.WriteLine(first.Name() + ":");
     for (int i = 0; i < firstscore; i++) {
       minfirst = rnd.Next(minfirst, 95);
-      Console.WriteLine(first.Start()[rnd.Next(1, 10)] + " " + minfirst + "'"); // + " " + rnd.Next(1, 95) + "'");
+      Console.WriteLine(first.Start()[rnd.Next(1, 10)] + " " + minfirst + "'");
     }
 
     int minsecond = 1;
@@ -36,7 +36,7 @@ class Match {
       minsecond = rnd.Next(minsecond, 95);
       if (rnd.Next(0, 8) == 7) {
         Console.WriteLine(second.Start()[rnd.Next(1, 10)] + "(pen)" + " " + minsecond + "'");
-      } else Console.WriteLine(second.Start()[rnd.Next(1, 10)] + " " + minsecond + "'"); // + " " + rnd.Next(1, 95) + "'");
+      } else Console.WriteLine(second.Start()[rnd.Next(1, 10)] + " " + minsecond + "'");
     }
 
     if (firstscore == 0 && secondscore == 0) {
