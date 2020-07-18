@@ -1,15 +1,15 @@
 class BAY {
-  public string name = "Bayern Munich";
-  public string city = "München";
-  public string coach = "Hans-Dieter Flick";
-  public string[] start = { 
+  string name = "Bayern Munich";
+  string city = "München";
+  string coach = "Hans-Dieter Flick";
+  string[] start = { 
     "Neuer", 
     "Pavard", "Boateng", "Alaba", "Davis", 
     "Goretzka", "Kimmich",
     "Müller",
     "Gnabri", "Lewandowski", "Coman"
   };
-  public int[] rating = { 90, // Neuer
+  int[] rating = { 90, // Neuer
     86, // Pavard
     85, // Boateng
     87, // Alaba
@@ -21,20 +21,35 @@ class BAY {
     96, // Lewandowski
     88 // Coman
   };
+  public string Name() {
+    return name;
+  }
+  public string City() {
+    return city;
+  }
+  public string Coach() {
+    return coach;
+  }
+  public string[] Start() {
+    return start;
+  }
+  public int[] Rating() {
+    return rating;
+  }
 }
 
 class BD {
-  public string name = "Borussia Dortmund";
-  public string city = "Dortmund";
-  public string coach = "Lucien Favr";
-  public string[] start = { 
+  string name = "Borussia Dortmund";
+  string city = "Dortmund";
+  string coach = "Lucien Favr";
+  string[] start = { 
     "Bürki", 
     "Hakimi", "Hummels", "Akanji", "Guerreiro", 
     "Witsel", "Can",
     "Brandt",
     "Sancho", "Haaland", "Reus"
   };
-  public int[] rating = { 86, // Bürki
+  int[] rating = { 86, // Bürki
     87, // Hakimi
     87, // Hummels
     85, // Akanji
@@ -46,4 +61,19 @@ class BD {
     92, // Haaland
     89 // Reus
   };
+  public string Name() {
+    return name;
+  }
+  public string City() {
+    return city;
+  }
+  public string Coach() {
+    return coach;
+  }
+  public string[] Start() {
+    return start;
+  }
+  public int[] Rating() {
+    return rating;
+  }
 }

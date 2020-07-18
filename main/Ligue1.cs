@@ -1,8 +1,8 @@
 class PSG {
-  public string name = "Paris Saint-Germain";
-  public string city = "Paris";
-  public string coach = "Thomas Tuhel";
-  public string[] start = {
+  string name = "Paris Saint-Germain";
+  string city = "Paris";
+  string coach = "Thomas Tuhel";
+  string[] start = {
     "Navas",
     "Kehrer", "Kimpembe", "Silva", "Bernat", 
     "Marquinhos", "Verratti", 
@@ -21,4 +21,19 @@ class PSG {
     89, // Di Maria
     88 // Icardi
   };
+  public string Name() {
+    return name;
+  }
+  public string City() {
+    return city;
+  }
+  public string Coach() {
+    return coach;
+  }
+  public string[] Start() {
+    return start;
+  }
+  public int[] Rating() {
+    return rating;
+  }
 }

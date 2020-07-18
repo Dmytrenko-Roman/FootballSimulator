@@ -2,11 +2,12 @@ using System;
 
 class Match {
   public static void Main() {
-    MU teamfirst = new MU();
-    BAY teamsecond = new BAY();
 
-    Team first = new Team(teamfirst.name, teamfirst.city, teamfirst.coach, teamfirst.start, teamfirst.rating);
-    Team second = new Team(teamsecond.name, teamsecond.city, teamsecond.coach, teamsecond.start, teamsecond.rating);
+    BAR teamfirst = new BAR();
+    RM teamsecond = new RM();
+
+    Team first = new Team(teamfirst.Name(), teamfirst.City(), teamfirst.Coach(), teamfirst.Start(), teamfirst.Rating());
+    Team second = new Team(teamsecond.Name(), teamsecond.City(), teamsecond.Coach(), teamsecond.Start(), teamsecond.Rating());
 
     first.Information();
     Console.WriteLine("Average rating: " + first.AverageRating());
@@ -17,8 +18,12 @@ class Match {
     Console.WriteLine("Average rating: " + second.AverageRating());
     
     Random rnd = new Random();
-    int firstscore = rnd.Next(0, 5);
-    int secondscore = rnd.Next(0, 5);
+
+    int balance = 70;
+    int firstkoef = first.AverageRating() / balance;
+    int secondkoef = second.AverageRating() / balance;
+    int firstscore = rnd.Next(0, 5) * firstkoef;
+    int secondscore = rnd.Next(0, 5) * secondkoef;
     
     Console.WriteLine(first.Name() + " " + firstscore + ":" + secondscore + " " + second.Name());
     Console.WriteLine("Scorers: ");
@@ -27,19 +32,17 @@ class Match {
     if (firstscore != 0) Console.WriteLine(first.Name() + ":");
     for (int i = 0; i < firstscore; i++) {
       minfirst = rnd.Next(minfirst, 95);
-      /* if (rnd.Next(0, 8) == 7) {
-        Console.WriteLine(first.Start()[rnd.Next(1, 10)] + "(pen) " + minfirst + "'");
-      } */
-      if (rnd.Next(0, 4) != 3 && rnd.Next(0, 1) == 1) {
-        Console.WriteLine(first.Start()[rnd.Next(1, 10)] + " " + minfirst + "'");
-      } else {
+      int accident = rnd.Next(0, 3);
+      if (accident == 2) {
         int scorer = rnd.Next(1, 10);
-        int assistant = rnd.Next(1, 10);
+        Console.WriteLine(first.Start()[scorer] + " " + minfirst + "'");
+      } else {
+        int scorer = rnd.Next(1, 11);
+        int assistant = rnd.Next(1, 11);
         if (assistant != scorer) {
           Console.WriteLine(first.Start()[scorer] + "(" + first.Start()[assistant] + ") " + minfirst + "'");
-        } else {
-          Console.WriteLine(first.Start()[rnd.Next(1, 10)] + "(pen) " + minfirst + "'");
-        }
+        } else Console.WriteLine(first.Start()[scorer] + "(pen) " + minfirst + "'");
+        
       }
     }
 
@@ -47,21 +50,19 @@ class Match {
     if (secondscore != 0) Console.WriteLine(second.Name() + ":");
     for (int i = 0; i < secondscore; i++) {
       minsecond = rnd.Next(minsecond, 95);
-      if (rnd.Next(0, 4) != 3 && rnd.Next(0, 1) == 1) {
-        Console.WriteLine(second.Start()[rnd.Next(1, 10)] + " " + minsecond + "'");
-      } else {
+      int accident = rnd.Next(0, 3);
+      if (accident == 2) {
         int scorer = rnd.Next(1, 10);
-        int assistant = rnd.Next(1, 10);
+        Console.WriteLine(second.Start()[scorer] + " " + minsecond + "'");
+      } else {
+        int scorer = rnd.Next(1, 11);
+        int assistant = rnd.Next(1, 11);
         if (assistant != scorer) {
           Console.WriteLine(second.Start()[scorer] + "(" + second.Start()[assistant] + ") " + minsecond + "'");
-        } else {
-          Console.WriteLine(second.Start()[rnd.Next(1, 10)] + "(pen) " + minsecond + "'");
-        }
+        } else Console.WriteLine(second.Start()[scorer] + "(pen) " + minsecond + "'");
       } 
     }
 
-    if (firstscore == 0 && secondscore == 0) {
-      Console.WriteLine("No goals.");
-    }
+    if (firstscore == 0 && secondscore == 0) Console.WriteLine("No goals.");
   }
 }
