@@ -1,12 +1,20 @@
-using System;
+/* using System;
 
-class Match {
+class PLAYOFF {
   public static void Main() {
+    MU team1 = new MU();
+    BAY team2 = new BAY();
+    BAR team3 = new BAR();
+    RM team4 = new RM();
+    BD team5 = new BD();
+    LIV team6 = new LIV();
+    PSG team7 = new PSG();
+    CHE team8 = new CHE();
 
-    ROMMAX teamfirst = new ROMMAX();
-    LIV teamsecond = new LIV();
+    object teams = new object() {team1, team2, team3, team4, team5, team6, team7, team8};
 
-    Team first = new Team(teamfirst.Name(), teamfirst.City(), teamfirst.Coach(), teamfirst.Start(), teamfirst.Rating());
+    foreach (object t in teams) {
+    Team first = new Team(t.Name(), teamfirst.City(), teamfirst.Coach(), teamfirst.Start(), teamfirst.Rating());
     Team second = new Team(teamsecond.Name(), teamsecond.City(), teamsecond.Coach(), teamsecond.Start(), teamsecond.Rating());
 
     first.Information();
@@ -64,5 +72,7 @@ class Match {
     }
 
     if (firstscore == 0 && secondscore == 0) Console.WriteLine("No goals.");
+    }
+
   }
-}
+} */

@@ -119,7 +119,7 @@ class MC {
 }
 
 class ARS {
-   string name = "Arsenal";
+  string name = "Arsenal";
   string city = "London";
   string coach = "Mikel Arteta";
   string[] start = {
@@ -180,6 +180,46 @@ class CHE {
     88, // Willian
     87, // Giroud
     89 // Pulisic
+  };
+  public string Name() {
+    return name;
+  }
+  public string City() {
+    return city;
+  }
+  public string Coach() {
+    return coach;
+  }
+  public string[] Start() {
+    return start;
+  }
+  public int[] Rating() {
+    return rating;
+  }
+}
+
+class ROMMAX {
+  string name = "Rommax";
+  string city = "Kyiv";
+  string coach = "Roman Zavalniuk";
+  string[] start = {
+    "Max de Zea",
+    "Max-Max", "Romas", "Maxuair", "Romertson",
+    "Maxandes", "De Romuyne", "Mexsi",
+    "Romaldo", "Roland", "Maxial"
+  };
+  int[] rating = {
+    99, // Max de Zea
+    99, // Max-Max
+    99, // Romas
+    99, // Maxuair
+    99, // Romertson
+    99, // Mexandes
+    99, // De Romuyne
+    99, // Mexsi
+    99, // Romaldo
+    99, // Roland
+    99 // Maxial
   };
   public string Name() {
     return name;
